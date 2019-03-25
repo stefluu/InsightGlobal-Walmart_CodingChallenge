@@ -26,10 +26,16 @@ code {
   border: 1px solid green;
 }
 
-.Countdown{
+.Countdown ul{
   height: 50%;
   border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }
+
 
 
 .CountSetter{

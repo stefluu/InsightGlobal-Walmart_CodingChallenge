@@ -7,22 +7,30 @@ export default class StandardCountdown extends Component {
     constructor(props){
         super(props);
     }
-    
+
   render() {
     return (
-      <div>
-          <ul>
+      <div className="Countdown">
+        <ul>
+          <li>
             <Hours setHours={this.props.setTime.hours} />
+          </li>
+          :
+          <li>
             <Minutes setMins={this.props.setTime.minutes} />
+          </li>
+          :
+          <li>
             <Seconds setSecs={this.props.setTime.seconds} />
-          </ul>
+          </li>
+        </ul>
 
-          <button
-            // onClick={}
-            >
-              Start
-          </button>
+        <button
+        // onClick={}
+        >
+          Start
+        </button>
       </div>
-    )
+    );
   }
 }

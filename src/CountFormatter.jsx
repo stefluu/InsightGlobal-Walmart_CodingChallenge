@@ -16,6 +16,15 @@ export default class CountFormatter extends Component {
                 />
             </li>
             <li>
+                In Words:
+                <input
+                    type="radio"
+                    name="display"
+                    value="words"
+                    onClick={this.props.setDisplay} 
+            />
+            </li>
+            {/* <li>
                 In Hours
                 <input
                     type="radio"
@@ -41,7 +50,7 @@ export default class CountFormatter extends Component {
                     value="inSeconds"
                     onClick={this.props.setDisplay}
                 />
-            </li>
+            </li> */}
         </form>
       </div>
     )

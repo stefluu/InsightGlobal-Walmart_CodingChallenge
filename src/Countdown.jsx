@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Hours from './Hours';
 import Minutes from './Minutes';
 import Seconds from './Seconds';
+import StandardCountdown from './StandardCountdown';
+import WordCountdown from './WordCountdown';
 
 export default class Countdown extends Component {
 
@@ -20,54 +22,81 @@ export default class Countdown extends Component {
     let display;
 
     switch (displayFormat) {
-        case "inStandard":
-            display = 
-            <StandardCountdown 
-                setTime={this.props.setTime} 
-                countdown={this.countdown}
-            />
-            break;
+      case "standard":
+        display =
+        <StandardCountdown
+          setTime={this.props.setTime}
+          countdown={this.countdown}
+        />;
+        break;
 
-        case "inHours":
-            display = 
-            <HoursCountdown 
-                setTime={this.props.setTime} 
-                countdown={this.countdown}
-            />
-            break;
+      case "words":
+        display =
+        <WordCountdown
+          setTime={this.props.setTime}
+          countdown={this.countdown}
+        />;
+        break;
 
-        case "inMinutes":
-            display = 
-            <MinutesCountdown 
-                setTime={this.props.setTime} 
+      default:
+        display =
+            <StandardCountdown
+                setTime={this.props.setTime}
                 countdown={this.countdown}
-            />
-            break;
-
-        case "inSeconds":
-            display = 
-            <SecondsCountdown 
-                setTime={this.props.setTime} 
-                countdown={this.countdown}
-            />
-            break;
-    
-        default:
-            display = 
-            <StandardCountdown 
-                setTime={this.props.setTime} 
-                countdown={this.countdown}
-            />
-            break;
+            />;
+        break;
     }
+
+    // switch (displayFormat) {
+    //     case "inStandard":
+    //         display = 
+    //         <StandardCountdown 
+    //             setTime={this.props.setTime} 
+    //             countdown={this.countdown}
+    //         />
+    //         break;
+
+    //     case "inHours":
+    //         display = 
+    //         <HoursCountdown 
+    //             setTime={this.props.setTime} 
+    //             countdown={this.countdown}
+    //         />
+    //         break;
+
+    //     case "inMinutes":
+    //         display = 
+    //         <MinutesCountdown 
+    //             setTime={this.props.setTime} 
+    //             countdown={this.countdown}
+    //         />
+    //         break;
+
+    //     case "inSeconds":
+    //         display = 
+    //         <SecondsCountdown 
+    //             setTime={this.props.setTime} 
+    //             countdown={this.countdown}
+    //         />
+    //         break;
+    
+    //     default:
+    //         display = 
+    //         <StandardCountdown 
+    //             setTime={this.props.setTime} 
+    //             countdown={this.countdown}
+    //         />
+    //         break;
+    // }
 
     return (
         <div className="Countdown">
-            <ul>
+            {display}
+            {/* <ul>
                 <Hours setHours={this.props.setTime.hours}/>
                 <Minutes setMins={this.props.setTime.minutes}/>
                 <Seconds setSecs={this.props.setTime.seconds}/>
-            </ul>
+            </ul> */}
         </div>
     )
   }
