@@ -98,7 +98,7 @@ export default class WordCountdown extends Component {
             //     // alert("hi")
                 
             // }, 1000)}
-            onClick={this.countDown()}
+            onClick={this.countDown.bind(this)}
         >
             Start
         </button>
