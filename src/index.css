@@ -12,3 +12,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.CounterParent{
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.LowerBox{
+  border: 1px solid green;
+}
+
+.Countdown{
+  height: 50%;
+  border: 1px solid red;
+}
+
+
+.CountSetter{
+  width: 50%;
+  height: 30%;
+  border: 3px solid black;
+  margin: auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.CountSetterForm ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.CountSetterForm li{
+  margin: auto;
+  list-style: none;
+}
+
+.CountSetterForm input{
+  width: 50px;
+  height: 30px;
+  font-size: 20px;
+  padding: 5px;
+}
