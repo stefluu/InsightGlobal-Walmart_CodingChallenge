@@ -59,6 +59,7 @@ export default class WordCountdown extends Component {
       // for(let i = 0; i < 3; i++){
       //   this.countDown(start, count);
       // };
+
       this.countDown(start, count);
     }
 
@@ -109,8 +110,17 @@ export default class WordCountdown extends Component {
 
         let countingDown = 
         setInterval(() => {
+          console.log(this.state)
           if(count === 0){
             clearInterval(countingDown);
+            console.log(this.state)
+
+            if(this.state.minutes > 0){
+              this.continueCountdown("minutes");
+            } else if(this.state.hours > 0){
+              this.continueCountdown("hours")
+            }
+            // console.log("done")
             // this.resetIncrements(start);
             // this.doAllCountDowns();
           } else {
@@ -134,6 +144,30 @@ export default class WordCountdown extends Component {
             }
           }
         }, millisecs);
+
+        console.log(this.state)
+    }
+
+    continueCountdown(type){
+      switch (type) {
+        case "minutes":
+          let minutes = this.state.minutes
+          this.setState({seconds: 59});
+          this.setState({minutes: minutes-1});
+          this.countDown("seconds", 59);
+          break;
+        
+        case "hours":
+          let hours = this.state.hours
+          this.setState({minutes: 59});
+          this.setState({seconds: 59});
+          this.setState({hours: hours-1});
+          this.countDown("seconds", 59);
+          break;
+      
+        default:
+          break;
+      }
     }
 
     // resetIncrements(start, count){
