@@ -58,8 +58,8 @@ export default class CountSetter extends Component {
         </form>
 
        <div className="LowerBox">
-          <Countdown setTime={this.state} />
           <CountFormatter setDisplay={this.setDisplay}/>
+          <Countdown setTime={this.state} />
        </div>
         
       </div>

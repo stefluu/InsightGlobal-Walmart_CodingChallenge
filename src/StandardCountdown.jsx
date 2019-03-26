@@ -4,9 +4,9 @@ import Minutes from "./Minutes";
 import Seconds from "./Seconds";
 
 export default class StandardCountdown extends Component {
-    constructor(props){
-        super(props);
-    }
+  constructor(props){
+      super(props);
+  }
 
   render() {
     return (
@@ -26,7 +26,7 @@ export default class StandardCountdown extends Component {
         </ul>
 
         <button
-        // onClick={}
+          onClick={this.props.setTimeStates}
         >
           Start
         </button>
