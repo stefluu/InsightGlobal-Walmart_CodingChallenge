@@ -17,10 +17,7 @@ export default class CountSetter extends Component {
   setCount(type){
     return (e) => {
       e.preventDefault();
-      console.log(e.target.value)
-      this.setState({ [type]: parseInt(e.target.value) }, () => {
-        console.log(this.state)
-      });
+      this.setState({ [type]: parseInt(e.target.value)});
     }
   }
 
