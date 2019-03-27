@@ -2,7 +2,7 @@
   "name": "countdown",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stefluu.github.io/InsightGlobal-Walmart_CodingChallenge",
+  "homepage": "https://stefluu.github.io/InsightGlobal-Walmart_CodingChallenge/public/index.html",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
