@@ -39,6 +39,14 @@ export default class CountSetter extends Component {
     }
   }
 
+  validateAllEntries(entry1, entry2, entry3){
+    const allEntriesAdded = entry1 + entry2 + entry3;
+    if(isNaN(allEntriesAdded)){
+      return false;
+    }
+    return true;
+  }
+
   setCount(type){
     return (e) => {
       e.preventDefault();
@@ -84,7 +92,7 @@ export default class CountSetter extends Component {
 
         <div className="LowerBox">
             <CountFormatter setDisplay={this.setDisplay} />
-            <Countdown setTime={this.state} />
+            <Countdown setTime={this.state} validateAllEntries={this.validateAllEntries}/>
         </div>
           
         </div>

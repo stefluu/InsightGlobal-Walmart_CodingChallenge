@@ -19,12 +19,22 @@ export default class Countdown extends Component {
     this.countDown.bind(this);
     this.continueCountdown.bind(this);
   }
-
+  
   setTimeStates(){
+    this.setState({
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    });
 
-    const allEntriesAdded = this.props.setTime.seconds + this.props.setTime.minutes + this.props.setTime.hours;
-
-    if(allEntriesAdded !== 0){
+    this.resetStatus = false;
+    const entriesValidity = 
+    this.props.validateAllEntries(this.props.setTime.seconds, this.props.setTime.minutes, this.props.setTime.hours);
+    
+    if (!entriesValidity) {
+      alert("Please enter all number fields for countdown.");
+    }
+    else if(entriesValidity !== 0){
       let startButton = document.getElementsByClassName("StartButton");
       startButton[0].disabled = true;
       startButton[0].setAttribute("id", "ClickedStart")
@@ -46,87 +56,67 @@ export default class Countdown extends Component {
       }
   
       this.doAllCountDowns();
-    } else {
-      alert("Please enter numbers for countdown.");
     }
   }
   
   doAllCountDowns(){
     let start;
     let count;
-    if(this.props.setTime.seconds !== 0){
+
+    if (this.props.setTime.seconds){
       start = "seconds";
       count = this.props.setTime.seconds;
       this.setState({seconds: count});
     } 
     
-    else if(this.props.setTime.minutes !== 0){
+    else if (this.props.setTime.minutes){
       start = "minutes"
       count = this.props.setTime.minutes;
       this.setState({minutes: count});
     } 
 
-    else if(this.props.setTime.hours !== 0){
+    else if (this.props.setTime.hours){
       start = "hours"
       count = this.props.setTime.hours;
       this.setState({hours: count});
     }
-
     this.countDown(start, count);
   }
 
   countDown(start, count){
 
-    let millisecs;
+    let countingDown = 
+    setInterval(() => {
+      if(this.resetStatus){
+        clearInterval(countingDown);
+      }
 
-    switch (start) {
-      case "hours":
-        millisecs = 3.6e6;
-        break;
-      case "minutes":
-        millisecs = 60000;
-        break;
-      case "seconds":
-        millisecs = 1000;
-        break;
-    
-      default:
-        break;
-    }
-      let countingDown = 
-      setInterval(() => {
-        if(this.resetStatus){
-          clearInterval(countingDown);
-          this.resetStatus = false;
+      else if(!count){
+        if(this.state.minutes > 0){
+          this.continueCountdown("minutes");
+        } else if(this.state.hours > 0){
+          this.continueCountdown("hours")
         }
-
-        else if(count === 0){
-          clearInterval(countingDown);
-
-          if(this.state.minutes > 0){
-            this.continueCountdown("minutes");
-          } else if(this.state.hours > 0){
+        clearInterval(countingDown);
+        
+      } 
+      else {
+        count--;
+        switch(start) {
+          case "hours":
             this.continueCountdown("hours")
-          }
-
-        } else {
-          count--;
-          
-          switch (start) {
-            case "hours":
-              this.setState({hours: count});
-              break;
-            case "minutes":
-              this.setState({minutes: count});
-              break;
-            case "seconds":
-              this.setState({seconds: count});
-              break;            
-            default:
-              break;
-          }
+            break;
+          case "minutes":
+            this.continueCountdown("minutes");
+            break;
+          case "seconds":
+            this.setState({seconds: count});
+            break;            
+          default:
+            break;
         }
-      }, millisecs);
+      }
+    }, 1000);
   }
 
   continueCountdown(type){
