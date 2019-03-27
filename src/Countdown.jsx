@@ -22,27 +22,33 @@ export default class Countdown extends Component {
 
   setTimeStates(){
 
-    let startButton = document.getElementsByClassName("StartButton");
-    startButton[0].disabled = true;
-    startButton[0].setAttribute("id", "ClickedStart")
+    const allEntries = [this.props.setTime.seconds, this.props.setTime.minutes, this.props.setTime.hours];
 
-    let count;
-    if(this.props.setTime.seconds !== 0){
-      count = this.props.setTime.seconds;
-      this.setState({seconds: count});
-    } 
-    
-    if(this.props.setTime.minutes !== 0){
-      count = this.props.setTime.minutes;
-      this.setState({minutes: count});
-    } 
-
-    if(this.props.setTime.hours !== 0){
-      count = this.props.setTime.hours;
-      this.setState({hours: count});
+    if(allEntries !== [0, 0, 0]){
+      let startButton = document.getElementsByClassName("StartButton");
+      startButton[0].disabled = true;
+      startButton[0].setAttribute("id", "ClickedStart")
+  
+      let count;
+      if(this.props.setTime.seconds !== 0){
+        count = this.props.setTime.seconds;
+        this.setState({seconds: count});
+      } 
+      
+      if(this.props.setTime.minutes !== 0){
+        count = this.props.setTime.minutes;
+        this.setState({minutes: count});
+      } 
+  
+      if(this.props.setTime.hours !== 0){
+        count = this.props.setTime.hours;
+        this.setState({hours: count});
+      }
+  
+      this.doAllCountDowns();
+    } else {
+      alert("Please enter numbers for countdown.");
     }
-
-    this.doAllCountDowns();
   }
   
   doAllCountDowns(){
