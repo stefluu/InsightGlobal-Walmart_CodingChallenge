@@ -25,11 +25,22 @@ export default class StandardCountdown extends Component {
           </li>
         </ul>
 
-        <button
-          onClick={this.props.setTimeStates}
-        >
-          Start
-        </button>
+        <div className="ButtonParent">
+          <button
+            className="StartButton"
+            onClick={this.props.setTimeStates}
+          >
+            Start
+          </button>
+
+          <button
+            className="ResetButton"
+            onClick={this.props.reset}
+          >
+            Reset
+          </button>
+        </div>
+
       </div>
     );
   }

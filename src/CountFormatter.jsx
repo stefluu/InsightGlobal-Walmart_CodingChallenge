@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 export default class CountFormatter extends Component {
   render() {
     return (
-      <div>
-        <form>
-            Display:
+      <div className="CountFormatterBox">
+        <h3>Display:</h3>
+        <form className="CountFormatterForm">
             <li>
-                Standard(H:M:S)
+                <label>Standard(H:M:S)</label>
                 <input
                     type="radio"
                     name="display"
@@ -16,7 +16,7 @@ export default class CountFormatter extends Component {
                 />
             </li>
             <li>
-                In Words:
+                <label>In Words:</label>
                 <input
                     type="radio"
                     name="display"
