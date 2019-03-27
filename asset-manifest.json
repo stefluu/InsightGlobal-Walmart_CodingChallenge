@@ -1,13 +1,13 @@
 {
-  "main.css": "/InsightGlobal-Walmart_CodingChallenge/static/css/main.dafd0678.chunk.css",
-  "main.js": "/InsightGlobal-Walmart_CodingChallenge/static/js/main.4b511807.chunk.js",
-  "main.js.map": "/InsightGlobal-Walmart_CodingChallenge/static/js/main.4b511807.chunk.js.map",
-  "runtime~main.js": "/InsightGlobal-Walmart_CodingChallenge/static/js/runtime~main.854d25f9.js",
-  "runtime~main.js.map": "/InsightGlobal-Walmart_CodingChallenge/static/js/runtime~main.854d25f9.js.map",
-  "static/js/2.4f9c1e2a.chunk.js": "/InsightGlobal-Walmart_CodingChallenge/static/js/2.4f9c1e2a.chunk.js",
-  "static/js/2.4f9c1e2a.chunk.js.map": "/InsightGlobal-Walmart_CodingChallenge/static/js/2.4f9c1e2a.chunk.js.map",
-  "index.html": "/InsightGlobal-Walmart_CodingChallenge/index.html",
-  "precache-manifest.d3701daf2d5511826435ea952fd5c2f3.js": "/InsightGlobal-Walmart_CodingChallenge/precache-manifest.d3701daf2d5511826435ea952fd5c2f3.js",
-  "service-worker.js": "/InsightGlobal-Walmart_CodingChallenge/service-worker.js",
-  "static/css/main.dafd0678.chunk.css.map": "/InsightGlobal-Walmart_CodingChallenge/static/css/main.dafd0678.chunk.css.map"
+  "main.css": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/css/main.dafd0678.chunk.css",
+  "main.js": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/main.fa96a7d5.chunk.js",
+  "main.js.map": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/main.fa96a7d5.chunk.js.map",
+  "runtime~main.js": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/runtime~main.0d629fc6.js",
+  "runtime~main.js.map": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/runtime~main.0d629fc6.js.map",
+  "static/js/2.4f9c1e2a.chunk.js": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/2.4f9c1e2a.chunk.js",
+  "static/js/2.4f9c1e2a.chunk.js.map": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/js/2.4f9c1e2a.chunk.js.map",
+  "index.html": "/InsightGlobal-Walmart_CodingChallenge/index.html/index.html",
+  "precache-manifest.8c37b5f6a08a1a29fcf9ce9bfad31969.js": "/InsightGlobal-Walmart_CodingChallenge/index.html/precache-manifest.8c37b5f6a08a1a29fcf9ce9bfad31969.js",
+  "service-worker.js": "/InsightGlobal-Walmart_CodingChallenge/index.html/service-worker.js",
+  "static/css/main.dafd0678.chunk.css.map": "/InsightGlobal-Walmart_CodingChallenge/index.html/static/css/main.dafd0678.chunk.css.map"
 }
