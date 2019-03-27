@@ -1,8 +1,5 @@
 
 import React, { Component } from "react";
-import Hours from './Hours';
-import Minutes from './Minutes';
-import Seconds from './Seconds';
 import StandardCountdown from './StandardCountdown';
 import WordCountdown from './WordCountdown';
 
@@ -75,7 +72,6 @@ export default class Countdown extends Component {
   countDown(start, count){
 
     let millisecs;
-    let type;
 
     switch (start) {
       case "hours":
