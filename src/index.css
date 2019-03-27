@@ -137,3 +137,7 @@ code {
 .StartButton{
   margin-bottom: 0px;
 }
+
+#ClickedStart{
+  background: gray;
+}

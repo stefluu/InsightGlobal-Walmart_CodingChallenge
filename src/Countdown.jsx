@@ -14,6 +14,9 @@ export default class Countdown extends Component {
       minutes: 0,
       hours: 0
     }
+    
+    this.resetStatus = false;
+
     this.setTimeStates.bind(this);
     this.doAllCountDowns.bind(this);
     this.countDown.bind(this);
@@ -21,6 +24,11 @@ export default class Countdown extends Component {
   }
 
     setTimeStates(){
+
+      let startButton = document.getElementsByClassName("StartButton");
+      startButton[0].disabled = true;
+      startButton[0].setAttribute("id", "ClickedStart")
+
       let count;
       if(this.props.setTime.seconds !== 0){
         count = this.props.setTime.seconds;
@@ -65,6 +73,7 @@ export default class Countdown extends Component {
     }
 
     countDown(start, count){
+
       let millisecs;
       let type;
 
@@ -82,10 +91,15 @@ export default class Countdown extends Component {
         default:
           break;
       }
-
         let countingDown = 
         setInterval(() => {
-          if(count === 0){
+          if(this.resetStatus){
+            clearInterval(countingDown);
+            this.resetStatus = false;
+            console.log(this.state)
+          }
+
+          else if(count === 0){
             clearInterval(countingDown);
 
             if(this.state.minutes > 0){
@@ -136,6 +150,18 @@ export default class Countdown extends Component {
       }
     }
 
+  reset(){
+    this.setState({
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    })
+    this.resetStatus = true;
+
+    let startButton = document.getElementsByClassName("StartButton");
+      startButton[0].disabled = false;
+      startButton[0].removeAttribute("id", "ClickedStart")
+  }
 
 
   render() {
@@ -149,6 +175,7 @@ export default class Countdown extends Component {
             setTime={this.state}
             setTimeStates = {this.setTimeStates.bind(this)}
             countdown={this.countdown}
+            reset = {this.reset.bind(this)}
             />;
         break;
 
@@ -158,6 +185,7 @@ export default class Countdown extends Component {
             setTime={this.state}
             setTimeStates = {this.setTimeStates.bind(this)}
             countdown={this.countdown}
+            reset = {this.reset.bind(this)}
           />;
         break;
 
@@ -167,6 +195,7 @@ export default class Countdown extends Component {
             setTime={this.state}
             setTimeStates = {this.setTimeStates.bind(this)}
             countdown={this.countdown}
+            reset = {this.reset.bind(this)}
           />;
         break;
     }

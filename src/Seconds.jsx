@@ -4,6 +4,7 @@ export default class Seconds extends Component {
   constructor(props){
     super(props);
   }
+
   render() {
     let seconds;
 
