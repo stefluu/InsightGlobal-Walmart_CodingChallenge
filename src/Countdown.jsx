@@ -96,7 +96,6 @@ export default class Countdown extends Component {
           if(this.resetStatus){
             clearInterval(countingDown);
             this.resetStatus = false;
-            console.log(this.state)
           }
 
           else if(count === 0){
