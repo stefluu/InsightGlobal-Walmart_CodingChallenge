@@ -22,9 +22,9 @@ export default class Countdown extends Component {
 
   setTimeStates(){
 
-    const allEntries = [this.props.setTime.seconds, this.props.setTime.minutes, this.props.setTime.hours];
+    const allEntriesAdded = this.props.setTime.seconds + this.props.setTime.minutes + this.props.setTime.hours;
 
-    if(allEntries !== [0, 0, 0]){
+    if(allEntriesAdded !== 0){
       let startButton = document.getElementsByClassName("StartButton");
       startButton[0].disabled = true;
       startButton[0].setAttribute("id", "ClickedStart")

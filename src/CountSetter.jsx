@@ -21,8 +21,8 @@ export default class CountSetter extends Component {
       this.clearInvalid(type);
     }
 
-    if(parseInt(val) > 59){
-        alert("Please enter numbers under 60.");
+    if(parseInt(val) > 59 || parseInt(val) < 0){
+        alert("Please enter numbers between 0 and 60.");
         this.clearInvalid(type);
       }
   }
