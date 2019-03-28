@@ -41,9 +41,14 @@ export default class CountSetter extends Component {
 
   validateAllEntries(entry1, entry2, entry3){
     const allEntriesAdded = entry1 + entry2 + entry3;
-    if(isNaN(allEntriesAdded)){
+    if(isNaN(allEntriesAdded) || allEntriesAdded === 0){
       return false;
     }
+
+    let inputFields = document.getElementsByClassName("Setter");
+    for(let i = 0; i < inputFields.length; i++){
+      inputFields[i].readOnly = true;
+    };
     return true;
   }
 
@@ -75,26 +80,43 @@ export default class CountSetter extends Component {
             <ul>
               <li>
                 <label>Hours</label>
-                <input type="text" id="HourSetter" onChange={this.setCount("hours")} />
+                <input
+                  type="text"
+                  className="Setter"
+                  id="HourSetter"
+                  onChange={this.setCount("hours")}
+                />
               </li>
               <li>:</li>
               <li>
                 <label>Minutes</label>
-                <input type="text" id="MinuteSetter" onChange={this.setCount("minutes")} />
+                <input
+                  type="text"
+                  className="Setter"
+                  id="MinuteSetter"
+                  onChange={this.setCount("minutes")}
+                />
               </li>
               <li>:</li>
               <li>
                 <label>Seconds</label>
-                <input type="text" id="SecondSetter" onChange={this.setCount("seconds")} />
+                <input
+                  type="text"
+                  className="Setter"
+                  id="SecondSetter"
+                  onChange={this.setCount("seconds")}
+                />
               </li>
             </ul>
           </form>
 
-        <div className="LowerBox">
+          <div className="LowerBox">
             <CountFormatter setDisplay={this.setDisplay} />
-            <Countdown setTime={this.state} validateAllEntries={this.validateAllEntries}/>
-        </div>
-          
+            <Countdown
+              setTime={this.state}
+              validateAllEntries={this.validateAllEntries}
+            />
+          </div>
         </div>
       </div>
     );

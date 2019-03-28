@@ -30,9 +30,9 @@ export default class Countdown extends Component {
     this.resetStatus = false;
     const entriesValidity = 
     this.props.validateAllEntries(this.props.setTime.seconds, this.props.setTime.minutes, this.props.setTime.hours);
-    
+
     if (!entriesValidity) {
-      alert("Please enter all number fields for countdown.");
+      alert("Please enter all number fields with valid numbers(0-9) for countdown. All entries cannot be 0.");
     }
     else if(entriesValidity !== 0){
       let startButton = document.getElementsByClassName("StartButton");
@@ -152,6 +152,11 @@ export default class Countdown extends Component {
     let startButton = document.getElementsByClassName("StartButton");
       startButton[0].disabled = false;
       startButton[0].removeAttribute("id", "ClickedStart")
+    
+    let inputFields = document.getElementsByClassName("Setter");
+    for (let i = 0; i < inputFields.length; i++) {
+      inputFields[i].readOnly = false;
+    };
   }
 
 
