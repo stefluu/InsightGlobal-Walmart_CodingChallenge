@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/InsightGlobal-Walmart_CodingChallenge/index.html/precache-manifest.8c37b5f6a08a1a29fcf9ce9bfad31969.js"
+  "/InsightGlobal-Walmart_CodingChallenge/precache-manifest.2e59719f857d4780f39f262777eedddd.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/InsightGlobal-Walmart_CodingChallenge/index.html/index.html", {
+workbox.routing.registerNavigationRoute("/InsightGlobal-Walmart_CodingChallenge/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
