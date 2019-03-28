@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/InsightGlobal-Walmart_CodingChallenge/precache-manifest.dd7f1e5afd4e39dcfc81a7f0ebbfccd4.js"
+  "/InsightGlobal-Walmart_CodingChallenge/precache-manifest.d5275991bd033ad5a83940afb997d1da.js"
 );
 
 workbox.clientsClaim();

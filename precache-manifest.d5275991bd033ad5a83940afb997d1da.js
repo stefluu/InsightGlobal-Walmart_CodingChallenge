@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/InsightGlobal-Walmart_CodingChallenge/static/js/runtime~main.854d25f9.js"
   },
   {
-    "revision": "3444ecf1e1593d834dea",
-    "url": "/InsightGlobal-Walmart_CodingChallenge/static/js/main.221d8bb2.chunk.js"
+    "revision": "527cff25f2b9fbf2722f",
+    "url": "/InsightGlobal-Walmart_CodingChallenge/static/js/main.290e6e56.chunk.js"
   },
   {
     "revision": "c52b5364f1821694b68a",
     "url": "/InsightGlobal-Walmart_CodingChallenge/static/js/2.4f9c1e2a.chunk.js"
   },
   {
-    "revision": "3444ecf1e1593d834dea",
+    "revision": "527cff25f2b9fbf2722f",
     "url": "/InsightGlobal-Walmart_CodingChallenge/static/css/main.dafd0678.chunk.css"
   },
   {
-    "revision": "744908c4ab8617bb23d80197d89e4a80",
+    "revision": "7edafcfc58dae66b6f69b6d1f8e7aa4b",
     "url": "/InsightGlobal-Walmart_CodingChallenge/index.html"
   }
 ];
